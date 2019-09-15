@@ -29,7 +29,7 @@
 const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case "SELECT_COMPUTER":
-      return [...state, action.payload];
+      return Array.from(new Set([...state].concat(action.payload)));
     default:
       return state;
   }
